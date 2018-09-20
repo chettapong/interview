@@ -1,10 +1,8 @@
 <template>
   <b-container>
-    <h1>List</h1>
-    <br>
-    <h3>{{users.first_name}}</h3>
-    <h3>{{users.last_name}}</h3>
-    <h3>{{users.avatar}}</h3>
+    <h1>{{users.first_name}}</h1>
+    <h1>{{users.last_name}}</h1>
+    <h1>{{users.avatar}}</h1>
  </b-container>
 </template>
 

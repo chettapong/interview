@@ -7,7 +7,7 @@
     <b-navbar-nav>
       <b-nav-item href="register">Register</b-nav-item>
       <b-nav-item href="login">Login</b-nav-item>
-      <b-nav-item href="Usermanage">list</b-nav-item>
+      <b-nav-item href="listresource">list</b-nav-item>
     </b-navbar-nav>
 
     <!-- Right aligned nav items

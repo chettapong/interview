@@ -1,6 +1,5 @@
 <template>
     <b-container>
-      <h1>Listresource</h1>
       <label>{{users.name}}</label><br>
       <label>{{users.year}}</label><br>
       <label>{{users.color}}</label><br>
