@@ -11,6 +11,11 @@
         </b-row>
         <b-row>
           <b-col>
+            <h1>list</h1>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
             <br>
           </b-col>
         </b-row>

@@ -4,8 +4,8 @@ import Usermanage from '@/components/Usermanage'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Userresource from '@/components/Userresource'
-import test from '@/components/test'
-import list from '@/components/list'
+import Listresaource from '@/components/Listresaource'
+import List from '@/components/List'
 
 // import test from '@/components/test'
 
@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/home',
       alias: '/',
-      component: Usermanage
+      component: Userresource
     },
     {
       path: '/login',
@@ -30,15 +30,15 @@ export default new Router({
     },
     {
       path: '/listresource',
-      component: Userresource
+      component: Listresaource
     },
     {
-      path: '/test',
-      component: test
+      path: '/Usermanage',
+      component: Usermanage
     },
     {
       path: '/list',
-      component: list
+      component: List
     }
   ]
 })
