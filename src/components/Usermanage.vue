@@ -1,6 +1,11 @@
 <template>
     <b-container>
         <b-row>
+          <b-col>
+            <h1>list</h1>
+          </b-col>
+        </b-row>
+        <b-row>
             <b-col>
                 <usersave
                 :user="userfrom"
@@ -82,7 +87,7 @@ export default {
       // const userId = item.id
       this.fetchoneUser(item)
       // this.$router.push({path: `/test/${userId}`})
-      this.$router.push('/list')
+      this.$router.push('/listresource')
     }
   }
 }

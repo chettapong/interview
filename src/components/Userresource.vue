@@ -1,5 +1,6 @@
 <template>
     <b-container>
+      <h1>listresource</h1>
         <b-table striped hover :items="users" :fields="fields">
             <template slot="edit" slot-scope="row">
                 <b-button @click.stop="onPage(row.item)" class="mr-2">
@@ -36,7 +37,7 @@ export default {
       // const userId = item.id
       this.fetchoneresourceUser(item)
       // this.$router.push({path: `/test/${userId}`})
-      this.$router.push('/test')
+      this.$router.push('/Uresourcelist')
     }
   },
   created () {
