@@ -87,7 +87,7 @@ export default {
       // const userId = item.id
       this.fetchoneUser(item)
       // this.$router.push({path: `/test/${userId}`})
-      this.$router.push('/list')
+      this.$router.push('/listdata')
     }
   }
 }

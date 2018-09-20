@@ -5,9 +5,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Userresource from '@/components/Userresource'
 import Listresaource from '@/components/Listresaource'
-import List from '@/components/List'
-
-// import test from '@/components/test'
+import Listdata from '@/components/List'
 
 Vue.use(Router)
 
@@ -37,8 +35,8 @@ export default new Router({
       component: Usermanage
     },
     {
-      path: '/list',
-      component: List
+      path: '/listdata',
+      component: Listdata
     }
   ]
 })
