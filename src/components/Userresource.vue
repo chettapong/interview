@@ -2,7 +2,7 @@
     <b-container>
         <b-table striped hover :items="users" :fields="fields">
             <template slot="edit" slot-scope="row">
-                <b-button @click.stop="navigate" class="mr-2">
+                <b-button @click.stop="onPage(row.item)" class="mr-2">
                 detail
                 <a href="listresource/1"></a>
                 </b-button>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
@@ -22,6 +22,7 @@ export default {
       users: 'getUsers'
     })
   },
+
   data () {
     return {
       fields: ['name', 'year', 'color', 'pantone_value', 'edit'],
@@ -29,8 +30,13 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['fetchoneresourceUser']),
     onPage (item) {
-      console.log(item)
+      // console.log(item)
+      // const userId = item.id
+      this.fetchoneresourceUser(item)
+      // this.$router.push({path: `/test/${userId}`})
+      this.$router.push('/test')
     }
   },
   created () {

@@ -10,11 +10,17 @@
             </b-col>
         </b-row>
         <b-row>
+          <b-col>
+            <br>
+          </b-col>
+        </b-row>
+        <b-row>
             <b-col>
                <userlist
                :users="users"
                @edit="onFromedit"
                @remove="onRemove"
+               @list="onPage"
                ></userlist>
             </b-col>
         </b-row>
@@ -31,8 +37,8 @@ const userdata = () => {
     userfrom: [
       {
         id: null,
-        name: '',
-        job: ''
+        first_name: '',
+        last_name: ''
       }
     ]
   }
@@ -53,16 +59,16 @@ export default {
   },
   data: userdata,
   methods: {
-    ...mapActions(['saveUser', 'deleteUser']),
+    ...mapActions(['saveUser', 'deleteUser', 'fetchoneUser']),
     onFromsave (user) {
       this.saveUser(user).then(() => this.resetuser())
+      // console.log('111111', user)
     },
     resetuser () {
       this.userfrom = userdata().userfrom
     },
     onFromedit (item) {
       this.userfrom = { ...item }
-      // console.log(perPage)
     },
     onRemove (itemId) {
       // console.log(item)
@@ -71,6 +77,12 @@ export default {
           this.resetuser()
         }
       })
+    },
+    onPage (item) {
+      // const userId = item.id
+      this.fetchoneUser(item)
+      // this.$router.push({path: `/test/${userId}`})
+      this.$router.push('/list')
     }
   }
 }

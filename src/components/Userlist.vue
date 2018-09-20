@@ -1,15 +1,15 @@
 <template>
     <b-container>
-        <b-table striped hover :items="users" :fields="fields" @filtered="onPage">
+        <b-table striped hover :items="users" :fields="fields">
             <template slot="edit" slot-scope="row">
-                <b-button @click.stop="onEdit(row.item, perPage)" class="mr-2">
+                <b-button @click.stop="onEdit(row.item)" class="mr-2">
                 edit
                 </b-button>
                 <b-button @click.stop="onRemove(row.item, row.index)" class="mr-2">
                 remove
                 </b-button>
-                <b-button @click.stop="onPage(perPage)" class="mr-2">
-                detail {{perPage}}
+                <b-button @click.stop="onList(row.item)" class="mr-2">
+                detail
                 </b-button>
             </template>
         </b-table>
@@ -29,16 +29,16 @@ export default {
   },
   props: ['users', 'p', 't'],
   methods: {
-    onEdit (item, perPage) {
-      console.log(item, perPage)
-      // this.$emit('edit', item)
+    onEdit (item) {
+      console.log(item)
+      this.$emit('edit', item)
     },
     onRemove (item, index) {
       // console.log(item.id)
       this.$emit('remove', item.id)
     },
-    onPage () {
-      console.log('1')
+    onList (item) {
+      this.$emit('list', item)
     }
   },
   created (perPage) {

@@ -4,6 +4,9 @@ import Usermanage from '@/components/Usermanage'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Userresource from '@/components/Userresource'
+import test from '@/components/test'
+import list from '@/components/list'
+
 // import test from '@/components/test'
 
 Vue.use(Router)
@@ -30,8 +33,12 @@ export default new Router({
       component: Userresource
     },
     {
-      path: '/test'
-      // component: test, props: { name: 'world' }
+      path: '/test',
+      component: test
+    },
+    {
+      path: '/list',
+      component: list
     }
   ]
 })

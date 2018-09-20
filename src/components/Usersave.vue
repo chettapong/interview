@@ -5,16 +5,16 @@
                   <b-form-group
                         id="fieldset1"
                         label="name"
-                        label-for="username"
+                        label-for="first_name"
                     >
-                        <b-form-input type="text" id="username" v-model="user.first_name"></b-form-input>
+                        <b-form-input type="text" id="first_name" v-model="user.first_name"></b-form-input>
                     </b-form-group>
                     <b-form-group
                         id="fieldset1"
-                        label="job"
-                        label-for="userjob"
+                        label="lname"
+                        label-for="last_name"
                     >
-                        <b-form-input type="text" id="userjob" v-model="user.last_name"></b-form-input>
+                        <b-form-input type="text" id="last_name" v-model="user.last_name"></b-form-input>
                     </b-form-group>
                     <b-button type="submit" @click.prevent="onSubmit"> Submit </b-button>
             </b-col>

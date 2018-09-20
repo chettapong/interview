@@ -1,4 +1,3 @@
-import uuid from 'uuid'
 import axios from 'axios'
 
 import {
@@ -8,7 +7,9 @@ import {
   FETCH_USER,
   LOGIN_USER,
   REGISTER_USER,
-  FETCHRESOURCE_USER
+  FETCHRESOURCE_USER,
+  FETCHONERESOURCE_USER,
+  FETCHONELIST_USER
 } from './mutation-types'
 axios.defaults.baseURL = 'https://reqres.in/'
 
@@ -19,21 +20,16 @@ getResults(page = 1) {
             this.laravelData = response.data;
         });
 }
-
-export function fetchProducts ({ commit }, perPage) {
-  axios.get(`/api/users`, {
-    params: {
-      page: perPage
-    }
-  })
-    // .then(response => { commit(FETCH_PRODUCTS, response.data.data) })
-    .then((response) => { console.log(response.data.data) })
-}
 */
+
 export function fetchUser ({ commit }) {
   return axios.get(`/api/users`)
     .then(response => { commit(FETCH_USER, response.data) })
     // .then((response) => { console.log(response.data) })
+}
+export function getonelist ({ commit }, user) {
+  return axios.get(`/api/users/` + user.id)
+    .then((response) => { commit(FETCHONELIST_USER, response.data.data) })
 }
 export function createUser ({ commit }, user) {
   return axios
@@ -55,7 +51,10 @@ export function fetchresourceUser ({ commit }) {
   return axios.get(`/api/unknown`).then(response => {
     commit(FETCHRESOURCE_USER, response.data.data)
   })
-  // .then((response) => { console.log(Array(response.data.data)) })
+}
+export function getone ({ commit }, user) {
+  return axios.get(`/api/unknown/` + user.id)
+    .then((response) => { commit(FETCHONERESOURCE_USER, response.data.data) })
 }
 
 export function login ({ commit }, user) {
@@ -71,11 +70,24 @@ export function register ({ commit }, user) {
 }
 
 export function saveUser ({ commit, state }, user) {
-  const index = state.all.findIndex(p => p.id === user.id)
+  const index = state.all.findIndex((p) => p.id === user.id)
+  console.log(user.first_name, '         ', user)
   if (index !== -1) {
     return updateUser({ commit }, user)
   } else {
-    user.id = uuid.v4()
     return createUser({ commit }, user)
+  }
+}
+
+export function fetchoneresourceUser ({ commit, state }, user) {
+  const index = state.all.findIndex(p => p.id === user.id)
+  if (index !== -1) {
+    return getone({ commit }, user)
+  }
+}
+export function fetchoneUser ({ commit, state }, user) {
+  const index = state.all.findIndex(p => p.id === user.id)
+  if (index !== -1) {
+    return getonelist({ commit }, user)
   }
 }

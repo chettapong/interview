@@ -1,17 +1,22 @@
 <template>
     <b-container>
-        <h2 class="hello">Hello {{name}} {{ $attrs }}</h2>
+      <label>{{users.name}}</label><br>
+      <label>{{users.year}}</label><br>
+      <label>{{users.color}}</label><br>
+      <label>{{users.pantone_value}}</label>
     </b-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: 'login',
-  props: {
-    name: {
-      type: String,
-      default: 'Vue!'
-    }
+  computed: {
+    ...mapGetters({
+      users: 'getUsers'
+    })
+  },
+  methods: {
   }
 }
 </script>
