@@ -5,7 +5,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Userresource from '@/components/Userresource'
 import Listresaource from '@/components/Listresaource'
-import Listdata from '@/components/List'
+import Listdata from '@/components/Listdata'
 
 Vue.use(Router)
 
