@@ -31,10 +31,7 @@ export default {
   methods: {
     onPage (item) {
       console.log(item)
-    },
-    navigate () {
-      router.push({ name: "login" });
-    },
+    }
   },
   created () {
     this.$store.dispatch('fetchresourceUser')
