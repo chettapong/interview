@@ -14,7 +14,7 @@
                         label="Password"
                         label-for="pass"
                     >
-                        <b-form-input type="text" id="pass" v-model="user.Password"></b-form-input>
+                    <b-form-input type="text" id="pass" v-model="user.Password"></b-form-input>
                     </b-form-group>
                     <b-button type="submit" @click="onLogin"> Submit </b-button>
             </b-col>

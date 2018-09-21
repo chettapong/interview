@@ -60,13 +60,13 @@ export function getone ({ commit }, user) {
 export function login ({ commit }, user) {
   return axios
     .post(`api/login/`, user)
-    .then(response => commit(LOGIN_USER, user))
+    .then((response) => commit(LOGIN_USER, response.data))
 }
 
 export function register ({ commit }, user) {
   return axios
     .post(`api/register/`, user)
-    .then(response => commit(REGISTER_USER, user))
+    .then((response) => commit(REGISTER_USER, response.data))
 }
 
 export function saveUser ({ commit, state }, user) {
