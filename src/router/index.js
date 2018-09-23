@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/home',
       alias: '/',
-      component: Userresource
+      component: Usermanage
     },
     {
       path: '/login',
@@ -32,7 +32,7 @@ export default new Router({
     },
     {
       path: '/Usermanage',
-      component: Usermanage
+      component: Userresource
     },
     {
       path: '/listdata',
